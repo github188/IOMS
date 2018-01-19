@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<project name="IOMS" basedir="." default="usage">
+	<property file="build.properties" />
+
+	<property name="src.dir" value="src" />
+	<property name="resource.dir" value="resource" />
+	<property name="test.dir" value="test" />
+	<property name="dist.dir" value="dist" />
+	<property name="web.dir" value="war" />
+	<property name="jsp.dir" value="${web.dir}/WEB-INF/jsp" />
+	<property name="build.dir" value="${web.dir}/WEB-INF/classes" />
+	<property name="lib.dir" value="${web.dir}/WEB-INF/lib" />
+	<property name="projectname" value="ioms" />
+
+	<property name="report.dir" value="resources/report" />
+
+
+	<path id="master-classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+			<exclude name="${projectname}.jar" />
+		</fileset>
+		<fileset dir="${appserver.home}/lib">
+			<include name="servlet*.jar" />
+		</fileset>
+		<pathelement path="${build.dir}" />
+	</path>
+	<target name="usage">
+		<echo message="" />
+		<echo message="${projectname} build file ${deploy.path}" />
+		<echo message="-----------------------------------" />
+		<echo message="" />
+		<echo message="Available targets are:" />
+		<echo message="" />
+		<echo message="build     --> Build the application" />
+		<echo message="deploy    --> Deploy application as directory" />
+		<echo message="deploywar --> Deploy application as a WAR file" />
+		<echo message="install   --> Install application in Tomcat" />
+		<echo message="reload    --> Reload application in Tomcat" />
+		<echo message="start     --> Start Tomcat application" />
+		<echo message="stop      --> Stop Tomcat application" />
+		<echo message="list      --> List Tomcat applications" />
+		<echo message="" />
+	</target>
+
+	<target name="build" description="Compile main source tree java files">
+		<mkdir dir="${build.dir}" />
+		<javac destdir="${build.dir}" debug="true" debuglevel="lines,source" encoding="utf-8" includeantruntime="on">
+			<src path="${src.dir}" />
+			<classpath refid="master-classpath" />
+		</javac>
+		<copy todir="${build.dir}" preservelastmodified="true">
+			<fileset dir="${src.dir}">
+				<include name="/images/**" />
+				<include name="**/*.xml" />
+				<include name="**/*.properties" />
+				<include name="**/*.dat" />
+				<exclude name="tests/**/*.xml" />
+			</fileset>
+		</copy>
+		<war destfile="${projectname}.war"  webxml="${web.dir}/WEB-INF/web.xml">
+            <lib dir="${lib.dir}"></lib>
+            <classes dir="${build.dir}"></classes>
+        </war> 
+	</target>
+
+	<target name="clean" description="Clean output directories">
+		<delete includeEmptyDirs="true">
+			<fileset dir="${build.dir}">
+				<include name="**/*" />
+				<exclude name="*.*" />
+			</fileset>
+		</delete>
+		<delete includeEmptyDirs="true">
+			<fileset dir="${lib.dir}">
+				<include name="${projectname}.jar" />
+			</fileset>
+		</delete>
+		<echo level="info">Clean the project success</echo>
+	</target>
+
+	<target name="jarSrc" description="jar the src" depends="clean,build">
+		<jar destfile="${lib.dir}/${projectname}.jar">
+			<fileset dir="${build.dir}">
+				<include name="**/*" />
+				<include name="**/*.JPG" />
+				<include name="**/*.jpg" />
+				<include name="**/*.png" />
+				<exclude name="*.*" />
+			</fileset>
+		</jar>
+		<copy todir="${dist.dir}">
+			<fileset file="${lib.dir}/${projectname}.jar">
+			</fileset>
+		</copy>
+		<echo level="info">jar the src success.</echo>
+	</target>
+
+	<target name="deploy" depends="build" description="deploy application">
+		<copy todir="${deploy.path}/${projectname}" preservelastmodified="true">
+			<fileset dir="${web.dir}">
+				<include name="**" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="undeploy" description="Un-Deploy application">
+		<delete includeEmptyDirs="true">
+			<fileset dir="${deploy.path}/${projectname}">
+				<include name="**/*" />
+			</fileset>
+		</delete>
+	</target>
+	<target name="clean-deploy" depends="clean,deploy" description="Clean and Deploy">
+	</target>
+
+	<target name="publishBin" depends="jarSrc" description="publish the application">
+		<delete includeemptydirs="true">
+			<fileset dir="${build.dir}">
+				<include name="**/*" />
+				<exclude name="*.*" />
+			</fileset>
+		</delete>
+		<war destfile="${dist.dir}/${projectname}.war" webxml="${web.dir}/WEB-INF/web.xml">
+			<fileset dir="${web.dir}">
+				<include name="**/*.*" />
+				<exclude name="WEB-INF/web.xml" />
+			</fileset>
+		</war>
+		<echo level="info">pulish the ${dist.dir}/${projectname}.war (bin) success</echo>
+	</target>
+
+	<target name="publishSrc" description="publish the src">
+		<antcall target="clean">
+		</antcall>
+		<zip destfile="${dist.dir}/${projectname}-src.zip">
+			<fileset dir="${src.dir}" includes="**/**" />
+		</zip>
+		<zip destfile="${dist.dir}/${projectname}-total.zip">
+			<fileset dir="." includes="${src.dir}/**" />
+			<fileset dir="." includes="${test.dir}/**" />
+			<fileset dir="." includes="${web.dir}/**" />
+			<fileset dir="." includes="*.*" />
+		</zip>
+		<echo level="info">Publish the ${dist.dir}/${projectname}-src.zip (src) success^_^</echo>
+	</target>
+
+	<target name="dist" depends="publishBin,publishSrc" description="Distribute the project!">
+		<echo level="info">Distribute the ${projectname} success</echo>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: test report.dir init                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="test init">
+		<mkdir dir="${report.dir}" />
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: compile                      
+         - - - - - - - - - - - - - - - - - -->
+
+
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: compile test cases                      
+         - - - - - - - - - - - - - - - - - -->
+
+
+	<target name="all compile" depends="test init,build">
+	</target>
+
+	<!-- ======================================== 
+          target: auto test all test case and output report file                      
+      	===================================== -->
+	<target name="junit and report" depends="all compile">
+		<junit printsummary="on" fork="true" showoutput="true">
+			<classpath>
+				<fileset dir="${lib.dir}">
+					<include name="**/*.jar" />
+					<exclude name="${projectname}.jar" />
+				</fileset>
+				<pathelement path="${build.dir}" />
+			</classpath>
+			<formatter type="xml" />
+			<batchtest todir="${report.dir}">
+				<fileset dir="${build.dir}">
+					<include name="**/Test*.*" />
+				</fileset>
+			</batchtest>
+		</junit>
+		<junitreport todir="${report.dir}">
+			<fileset dir="${report.dir}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${report.dir}" />
+		</junitreport>
+	</target>
+
+</project>

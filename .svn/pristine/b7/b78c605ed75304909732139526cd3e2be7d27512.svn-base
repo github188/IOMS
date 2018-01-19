@@ -1,0 +1,120 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+}
+
+body {
+	background: #FFF;
+	text-align: center;
+	text-align: center;
+	padding-top: 2px;
+}
+
+img {
+	vertical-align: middle;
+	border: 0px;
+}
+
+input {
+	vertical-align: middle;
+	border: 1px solid #B8B8B8;
+	height: 16px;
+	padding: 4px 2px 0px 2px;
+}
+
+.window {
+	width: 99%;
+	border: 1px solid #C3CCD3;
+	min-height: 220px;
+	margin: 0px auto;
+	background: #F7FBFF;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#E0F2FC,
+		direction=120, strength=5 );
+}
+
+.title {
+	height: 28px;
+	background: url(../images/placebg.jpg) repeat-x center bottom;
+	border-bottom: 1px solid #C3CCD3;
+}
+
+.title dd {
+	width: auto;
+	float: left;
+	padding: 6px 0px 0px 5px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #333;
+}
+
+.title dd img {
+	margin: 0px 3px 2px 0px;
+}
+
+.title dt {
+	width: auto;
+	float: right;
+	padding: 5px 5px 0px 0px;
+}
+
+h1 {
+	font-size: 12px;
+	font-weight: bold;
+	color: #056899;
+	height: 15px;
+	padding: 20px 0px;
+}
+
+.window table {
+	margin: 0px 20px;
+	width: 98%;
+}
+
+.window td,.window th {
+	height: 35px;
+	padding: 0px 2px;
+}
+
+.window th {
+	text-align: right;
+	font-weight: bold;
+	color: #056899;
+}
+
+.window td {
+	text-align: left;
+}
+
+.btn {
+	height: 22px;
+	float: left;
+	margin-right: 4px;
+}
+
+.btn a:link,.btn a:visited,.btn a:active {
+	color: #333;
+	text-decoration: none;
+	display: block;
+	background: url(../images/btn/btnbg.gif) repeat-x center bottom;
+	border: 1px solid #95BDD7;
+	width: auto;
+	height: 17px;
+	padding: 5px 6px 0px 6px;
+}
+
+.btn a:hover {
+	color: #705D00;
+	text-decoration: none;
+	display: block;
+	background: url(../images/btn/btnbg2.gif) repeat-x center bottom;
+	border: 1px solid #705D00;
+}
+
+.boxbtn {
+	width: 90px;
+	margin: 0px auto;
+	padding: 15px 0px;
+}

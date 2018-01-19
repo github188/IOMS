@@ -1,0 +1,2 @@
+dbconn.cronExpression=0/30 * * * * ?
+scheduler.threadsum=10

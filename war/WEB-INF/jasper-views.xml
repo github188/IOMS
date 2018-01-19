@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<bean id="apply"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/apply.jasper" p:reportDataKey="datasource">
+		<property name="subReportDataKeys">
+			<list>
+				<value>subreportDatasource</value>
+			</list>
+		</property>
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="telegraph_circuit"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/telegraph_circuit.jasper" p:reportDataKey="datasource">
+		<property name="subReportDataKeys">
+			<list>
+				<value>subreportDatasource</value>
+			</list>
+		</property>
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="config"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/config.jasper" p:reportDataKey="datasource">
+		<property name="subReportDataKeys">
+			<list>
+				<value>subreportDatasource</value>
+			</list>
+		</property>
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="ATM"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/ATM.jasper" p:reportDataKey="datasource">
+		<property name="subReportDataKeys">
+			<list>
+				<value>subreportDatasource</value>
+			</list>
+		</property>
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="ATM_config"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/ATM_config.jasper" p:reportDataKey="datasource">
+		<property name="subReportDataKeys">
+			<list>
+				<value>subreportDatasource</value>
+			</list>
+		</property>
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="TES"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/TES.jasper" p:reportDataKey="datasource">
+		<property name="subReportDataKeys">
+			<list>
+				<value>subreportDatasource</value>
+			</list>
+		</property>
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="TES_config"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/TES_config.jasper" p:reportDataKey="datasource">
+		<property name="subReportDataKeys">
+			<list>
+				<value>subreportDatasource</value>
+			</list>
+		</property>
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="PES"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/PES.jasper" p:reportDataKey="datasource">
+		<property name="subReportDataKeys">
+			<list>
+				<value>subreportDatasource</value>
+			</list>
+		</property>
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="PES_config"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/PES_config.jasper" p:reportDataKey="datasource">
+		<property name="subReportDataKeys">
+			<list>
+				<value>subreportDatasource</value>
+			</list>
+		</property>
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="KU"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/KU.jasper" p:reportDataKey="datasource">
+		<property name="subReportDataKeys">
+			<list>
+				<value>subreportDatasource</value>
+			</list>
+		</property>
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="KU_config"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/KU_config.jasper" p:reportDataKey="datasource">
+		<property name="subReportDataKeys">
+			<list>
+				<value>subreportDatasource</value>
+			</list>
+		</property>
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="kusatellite"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/kusatellite.jasper" p:reportDataKey="datasource">
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="datacom_apply"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/datacom_apply.jasper" p:reportDataKey="datasource">
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="datacom_record"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/datacom_record.jasper" p:reportDataKey="datasource">
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="autotelegraph"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/autotelegraph.jasper" p:reportDataKey="datasource">
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="signoutnet_atm"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/signoutnet_atm.jasper" p:reportDataKey="datasource">
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="signoutnet_ku"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/signoutnet_ku.jasper" p:reportDataKey="datasource">
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="ku_maintence"
+		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView"
+		p:url="/WEB-INF/reports/ku_maintence.jasper" p:reportDataKey="datasource">
+		<property name="subReportDataKeys">
+			<list>
+				<value>subreportDatasource</value>
+			</list>
+		</property>
+		<property name="exporterParameters">
+			<map>
+				<entry
+					key="net.sf.jasperreports.engine.JRExporterParameter.CHARACTER_ENCODING"
+					value="UTF-8">
+				</entry>
+			</map>
+		</property>
+	</bean>
+</beans>

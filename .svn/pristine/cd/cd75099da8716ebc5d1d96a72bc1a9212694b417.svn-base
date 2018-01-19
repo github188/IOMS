@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+encoding//war/WEB-INF/conf/ftp.properties=ISO-8859-1
+encoding//war/WEB-INF/jsp/basedata/satellite/attenuator/view.jsp=UTF-8
+encoding/<project>=UTF-8

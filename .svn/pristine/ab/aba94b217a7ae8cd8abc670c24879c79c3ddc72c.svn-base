@@ -1,0 +1,29 @@
+@charset "utf-8";
+/*消息提示框样式*/
+body {
+	font-family: Arial;
+	font-size: 13px;
+	background-color: white;
+}
+
+#msgTable td {
+	border: 1px solid rgb(207, 210, 223);
+	border-top: 0px;
+}
+
+#msgTable .menuName {
+	background: url(../images/placebg.jpg) repeat-x center bottom;
+	border: 1px solid rgb(195, 204, 211);
+	font-weight: bold;
+}
+
+#msgTable .columnName {
+	text-decoration: none;
+	color: blue;
+}
+
+#msgTable td a:hover {
+	color: #725E00;
+	text-decoration: none;
+	font-weight: bold;
+}

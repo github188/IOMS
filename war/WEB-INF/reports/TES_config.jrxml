@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="apply" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e22a931b-3c6f-4bee-aa29-50a859c84edf">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="62e12786-538b-41c9-973e-7754a608e7db"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\ireports\\PCSP\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IMAGE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\atnc.png"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="applySign" class="java.lang.String">
+		<fieldDescription><![CDATA[applySign]]></fieldDescription>
+	</field>
+	<field name="configAuditUser" class="java.lang.String">
+		<fieldDescription><![CDATA[configAuditUser]]></fieldDescription>
+	</field>
+	<field name="atncSign" class="java.lang.String">
+		<fieldDescription><![CDATA[atncSign]]></fieldDescription>
+	</field>
+	<field name="configPurpose" class="java.lang.String">
+		<fieldDescription><![CDATA[configPurpose]]></fieldDescription>
+	</field>
+	<field name="areaSign" class="java.lang.String">
+		<fieldDescription><![CDATA[areaSign]]></fieldDescription>
+	</field>
+	<field name="linkPhone" class="java.lang.String">
+		<fieldDescription><![CDATA[linkPhone]]></fieldDescription>
+	</field>
+	<field name="configTime" class="java.util.Date">
+		<fieldDescription><![CDATA[configTime]]></fieldDescription>
+	</field>
+	<field name="areaOpinion" class="java.lang.String">
+		<fieldDescription><![CDATA[areaOpinion]]></fieldDescription>
+	</field>
+	<field name="applyFax" class="java.lang.String">
+		<fieldDescription><![CDATA[applyFax]]></fieldDescription>
+	</field>
+	<field name="ku" class="java.util.List">
+		<fieldDescription><![CDATA[ku]]></fieldDescription>
+	</field>
+	<field name="linkTelephone" class="java.lang.String">
+		<fieldDescription><![CDATA[linkTelephone]]></fieldDescription>
+	</field>
+	<field name="serialNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[serialNumber]]></fieldDescription>
+	</field>
+	<field name="atm" class="java.util.List">
+		<fieldDescription><![CDATA[atm]]></fieldDescription>
+	</field>
+	<field name="atncOpinion" class="java.lang.String">
+		<fieldDescription><![CDATA[atncOpinion]]></fieldDescription>
+	</field>
+	<field name="configAtncLeader" class="java.lang.String">
+		<fieldDescription><![CDATA[configAtncLeader]]></fieldDescription>
+	</field>
+	<field name="applyRemark" class="java.lang.String">
+		<fieldDescription><![CDATA[applyRemark]]></fieldDescription>
+	</field>
+	<field name="tes" class="java.util.List">
+		<fieldDescription><![CDATA[tes]]></fieldDescription>
+	</field>
+	<field name="configOperateUser" class="java.lang.String">
+		<fieldDescription><![CDATA[configOperateUser]]></fieldDescription>
+	</field>
+	<field name="linkMan" class="java.lang.String">
+		<fieldDescription><![CDATA[linkMan]]></fieldDescription>
+	</field>
+	<field name="applyEmail" class="java.lang.String">
+		<fieldDescription><![CDATA[applyEmail]]></fieldDescription>
+	</field>
+	<field name="applyOpttype" class="java.lang.String">
+		<fieldDescription><![CDATA[applyOpttype]]></fieldDescription>
+	</field>
+	<field name="applyCom" class="java.lang.String">
+		<fieldDescription><![CDATA[applyCom]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="249" y="0" width="333" height="40" uuid="32f1ad73-a8a1-4f7b-bee0-783be11cc10e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[TES卫星网电路配置记录表]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="515" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle" isUsingCache="false" onErrorType="Blank">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="536" y="0" width="150" height="150" uuid="2e1e9fa9-19d4-42e2-95a1-76b5ccb249ef"/>
+				<imageExpression><![CDATA[$P{IMAGE}]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="802" height="30" uuid="4904a18c-3fdf-415d-bbfc-87909f2d13ea"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="90" y="0" width="712" height="30" uuid="6b910a19-5953-4748-8128-d698e892fa57"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{configTime}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="90" height="30" uuid="749b7c21-68f0-4000-b573-a664d5768fc4"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[配置时间]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="30" width="802" height="30" uuid="6bff9b36-b5a7-4f4a-8f1f-7df7c8a33174"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="90" y="0" width="712" height="30" uuid="fa0403bb-2603-49e2-ac5c-ff6649781aa7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{configAtncLeader}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="90" height="30" uuid="99b518d2-bad5-447a-8a3f-2d8df93e96d7"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[领导审批]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="60" width="802" height="30" uuid="88eeae39-a8f5-46fd-9f50-ea595918110c"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="90" y="0" width="712" height="30" uuid="f61bb6ac-e13f-4503-8db1-de93f2b6c1b5"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{configOperateUser}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="90" height="30" uuid="95c9e307-0818-46aa-893f-3274f4486487"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[操作人员]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="90" width="802" height="30" uuid="32cde5af-b73f-44a9-8e9b-7eae2cd73c51"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="90" y="0" width="712" height="30" uuid="4ee57175-8284-4112-bb48-29a6f24f63d1"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{configAuditUser}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="90" height="30" uuid="e24e2198-4c3d-4aab-a141-715c31435f28"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[验收人员]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="120" width="802" height="90" uuid="20281061-fcf4-4b5b-b1a3-f2e5a7eb6f6b"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<staticText>
+					<reportElement x="85" y="30" width="50" height="60" uuid="cbeb5a31-f2e9-4de9-8869-576df50dc43d"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[机箱号]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="185" y="30" width="55" height="60" uuid="183847d7-9f9b-4f69-aa5f-cfc3f6dcc716"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[接口类型]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="295" y="30" width="50" height="60" uuid="32745b0f-16cb-45a9-b1ca-1b28ec2dde2b"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[机箱号]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="30" width="55" height="60" uuid="b90587ea-5fb2-423f-8eae-43b5656b0e0f"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[接口类型]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="0" width="210" height="30" uuid="ee39d222-ebff-49b6-9a09-09bbcc98e6ac"/>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[主叫端]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="0" width="30" height="90" uuid="51f8b1b3-664d-4408-a6b2-2e7f902003aa"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[序号]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="240" y="0" width="210" height="30" uuid="e6160f8a-fdb2-4ddb-846b-962d6aaf3f65"/>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[被叫端]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="671" y="0" width="65" height="90" uuid="94bb4aff-b6fa-4682-8ca6-ce552e6be66c"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[电路编号]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="736" y="0" width="66" height="90" uuid="3a93d54f-8cd0-4f8e-8ccf-a3e01306f85f"/>
+					<box>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[电路用途]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="30" y="30" width="55" height="60" uuid="9b71d039-3ae1-4cce-b9c0-b424a3d6a60e"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[站点名称]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="240" y="30" width="55" height="60" uuid="d2a34f66-8555-462b-beed-f957d77e7712"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[站点名称]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="561" y="0" width="50" height="90" uuid="0d577dca-b1b2-4134-9e9e-a265e30edfbf"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[同/异步]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="135" y="30" width="50" height="60" uuid="1640f0b1-855b-4d36-90b7-cc91356b5a58"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[槽位号]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="345" y="30" width="50" height="60" uuid="d5dded5f-a30a-4f61-a78e-3b39d4995b8d"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[槽位号]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="611" y="0" width="60" height="90" uuid="55330e9c-e547-4377-bb4b-8bc2a7dc9133"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[时钟方式]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="511" y="0" width="50" height="90" uuid="a27dd64a-2680-40d6-9634-9720d9a990d5"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[速率（Kb/s）]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="450" y="0" width="61" height="90" uuid="4539fa3f-f0cf-4b29-982e-5143362134de"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[电路名称]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="210" width="802" height="40" uuid="cb456d92-ef0c-4c3f-b79f-5d42ae6e1baf"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<subreport isUsingCache="false">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="802" height="40" uuid="f602be98-f901-4884-8288-13cdcd25d1b5"/>
+					<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{tes})]]></dataSourceExpression>
+					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "TES_config_subreport1.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="280" width="802" height="30" uuid="5acc9637-7ebf-4fad-b0f4-288b471320ff"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<staticText>
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="90" height="30" uuid="c5afd7ab-99a0-46ea-ab40-3e62a46fac12"/>
+					<box>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[填表说明]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="90" y="0" width="712" height="30" uuid="20c64836-fb31-4e13-ab05-b8e50bb99de2"/>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[1、DCU接口类型为RS-232；2、VCU接口类型为E&M或两线方式]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="250" width="802" height="30" uuid="7009ef71-fe61-46c1-a053-df9a21782e20"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<staticText>
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="90" height="30" uuid="8ce94d8c-a9a8-42a5-ab5e-6e8341979987"/>
+					<box>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[备注/其它要求]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="90" y="0" width="712" height="30" uuid="4ff76e7b-5ca2-43f8-98a1-b96707823b65"/>
+					<box>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{applyRemark}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band/>
+	</lastPageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

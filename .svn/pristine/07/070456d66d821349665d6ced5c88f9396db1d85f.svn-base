@@ -1,0 +1,14 @@
+#\u8BBE\u7F6E\u4E0A\u4F20\u6587\u4EF6\u6700\u5927\u503C1024M
+MAX_SIZE = 1073741824
+#\u5141\u8BB8\u4E0A\u4F20\u6587\u4EF6\u683C\u5F0F\u7684\u5217\u8868
+fileExts = jpg,gif,png,xls,xlsx,doc,docx,ppt,pptx,rar,zip,pdf
+
+xlsAddress = /images/excel.png
+docAddress = /images/word.jpg
+pptAddress = /images/ppt.jpg
+pressAddress = /images/press.png
+
+separator = \\
+
+reportExt = jrprint
+rootFile = D:\\test\\

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ATM_config_subreport1" language="groovy" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2e4d3ab9-d00e-46c0-a4c3-b5b5fef1f45d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="txSlot" class="java.lang.String">
+		<fieldDescription><![CDATA[txSlot]]></fieldDescription>
+	</field>
+	<field name="txNodeName" class="java.lang.String">
+		<fieldDescription><![CDATA[txNodeName]]></fieldDescription>
+	</field>
+	<field name="confServiceType" class="java.lang.String">
+		<fieldDescription><![CDATA[confServiceType]]></fieldDescription>
+	</field>
+	<field name="confNo" class="java.lang.String">
+		<fieldDescription><![CDATA[confNo]]></fieldDescription>
+	</field>
+	<field name="confRxSignal" class="java.lang.String">
+		<fieldDescription><![CDATA[confRxSignal]]></fieldDescription>
+	</field>
+	<field name="rxVpiDlci" class="java.lang.String">
+		<fieldDescription><![CDATA[rxVpiDlci]]></fieldDescription>
+	</field>
+	<field name="rxLine" class="java.lang.String">
+		<fieldDescription><![CDATA[rxLine]]></fieldDescription>
+	</field>
+	<field name="txLine" class="java.lang.String">
+		<fieldDescription><![CDATA[txLine]]></fieldDescription>
+	</field>
+	<field name="confRxNodeName" class="java.lang.String">
+		<fieldDescription><![CDATA[confRxNodeName]]></fieldDescription>
+	</field>
+	<field name="confTxPort" class="java.lang.String">
+		<fieldDescription><![CDATA[confTxPort]]></fieldDescription>
+	</field>
+	<field name="rxSlot" class="java.lang.String">
+		<fieldDescription><![CDATA[rxSlot]]></fieldDescription>
+	</field>
+	<field name="businessName" class="java.lang.String">
+		<fieldDescription><![CDATA[businessName]]></fieldDescription>
+	</field>
+	<field name="confTxNodeName" class="java.lang.String">
+		<fieldDescription><![CDATA[confTxNodeName]]></fieldDescription>
+	</field>
+	<field name="confRxLine" class="java.lang.String">
+		<fieldDescription><![CDATA[confRxLine]]></fieldDescription>
+	</field>
+	<field name="serviceType" class="java.lang.String">
+		<fieldDescription><![CDATA[serviceType]]></fieldDescription>
+	</field>
+	<field name="rxPortSpeed" class="java.lang.String">
+		<fieldDescription><![CDATA[rxPortSpeed]]></fieldDescription>
+	</field>
+	<field name="confTxSignal" class="java.lang.String">
+		<fieldDescription><![CDATA[confTxSignal]]></fieldDescription>
+	</field>
+	<field name="confUsage" class="java.lang.String">
+		<fieldDescription><![CDATA[confUsage]]></fieldDescription>
+	</field>
+	<field name="confRxPort" class="java.lang.String">
+		<fieldDescription><![CDATA[confRxPort]]></fieldDescription>
+	</field>
+	<field name="rxNodeName" class="java.lang.String">
+		<fieldDescription><![CDATA[rxNodeName]]></fieldDescription>
+	</field>
+	<field name="rxPort" class="java.lang.String">
+		<fieldDescription><![CDATA[rxPort]]></fieldDescription>
+	</field>
+	<field name="identifier" class="java.lang.String">
+		<fieldDescription><![CDATA[identifier]]></fieldDescription>
+	</field>
+	<field name="confTxVpiDlci" class="java.lang.String">
+		<fieldDescription><![CDATA[confTxVpiDlci]]></fieldDescription>
+	</field>
+	<field name="txVpiDlci" class="java.lang.String">
+		<fieldDescription><![CDATA[txVpiDlci]]></fieldDescription>
+	</field>
+	<field name="confTxSlodNum" class="java.lang.String">
+		<fieldDescription><![CDATA[confTxSlodNum]]></fieldDescription>
+	</field>
+	<field name="circuitSpeed" class="java.lang.String">
+		<fieldDescription><![CDATA[circuitSpeed]]></fieldDescription>
+	</field>
+	<field name="confRemark" class="java.lang.String">
+		<fieldDescription><![CDATA[confRemark]]></fieldDescription>
+	</field>
+	<field name="txPort" class="java.lang.String">
+		<fieldDescription><![CDATA[txPort]]></fieldDescription>
+	</field>
+	<field name="openTime" class="java.util.Date">
+		<fieldDescription><![CDATA[openTime]]></fieldDescription>
+	</field>
+	<field name="confSpeed" class="java.lang.String">
+		<fieldDescription><![CDATA[confSpeed]]></fieldDescription>
+	</field>
+	<field name="confRxSlodNum" class="java.lang.String">
+		<fieldDescription><![CDATA[confRxSlodNum]]></fieldDescription>
+	</field>
+	<field name="confRxVpiDlci" class="java.lang.String">
+		<fieldDescription><![CDATA[confRxVpiDlci]]></fieldDescription>
+	</field>
+	<field name="txPortSpeed" class="java.lang.String">
+		<fieldDescription><![CDATA[txPortSpeed]]></fieldDescription>
+	</field>
+	<field name="confTxLine" class="java.lang.String">
+		<fieldDescription><![CDATA[confTxLine]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<frame>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="802" height="40" uuid="fdfd7507-f599-4dd3-a95a-bc81a86ec5ec"/>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="30" height="40" isPrintWhenDetailOverflows="true" uuid="209ae095-a64c-432e-a88d-4d08b167b9be"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{identifier}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="30" y="0" width="55" height="40" isPrintWhenDetailOverflows="true" uuid="83bdbbaa-8d49-4097-bf2a-c2b9c646dd43"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confTxNodeName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="85" y="0" width="50" height="40" isPrintWhenDetailOverflows="true" uuid="0d219712-a195-46c6-a587-02ecd1c9dc1b"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confTxSlodNum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="135" y="0" width="50" height="40" isPrintWhenDetailOverflows="true" uuid="6e4d7dde-3d99-4896-9308-124732aff664"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confTxPort}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="185" y="0" width="55" height="40" isPrintWhenDetailOverflows="true" uuid="1ff0c9f1-7c58-4c18-a96b-0a1688973ad3"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confTxSignal}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="240" y="0" width="50" height="40" isPrintWhenDetailOverflows="true" uuid="21acbc5c-1e30-4758-a83a-548769ee654f"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confTxVpiDlci}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="290" y="0" width="55" height="40" isPrintWhenDetailOverflows="true" uuid="145eb9f7-79ff-4f9e-bf80-b8083c553343"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confRxNodeName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="345" y="0" width="50" height="40" isPrintWhenDetailOverflows="true" uuid="bf9b1590-6a84-4720-a0b7-4275da892ab4"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confRxSlodNum}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="395" y="0" width="50" height="40" isPrintWhenDetailOverflows="true" uuid="83d99c59-bf24-4b89-94ff-803663d6340c"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confRxPort}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="445" y="0" width="55" height="40" isPrintWhenDetailOverflows="true" uuid="777c2fbb-435d-4ef6-a046-897e97c74785"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confRxSignal}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="500" y="0" width="50" height="40" isPrintWhenDetailOverflows="true" uuid="cba0bcf6-a77c-4fab-8d0d-797f3dda3be7"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confRxVpiDlci}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="550" y="0" width="60" height="40" isPrintWhenDetailOverflows="true" uuid="d8b2fdae-222c-4af8-9383-42835f17b7fe"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confUsage}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="610" y="0" width="62" height="40" isPrintWhenDetailOverflows="true" uuid="f7a67beb-15a9-4ebe-92b7-561fe6857e16"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confServiceType}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="672" y="0" width="50" height="40" isPrintWhenDetailOverflows="true" uuid="54fc6b2f-4ee5-4b59-9ed6-a7c48df9c6ba"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confSpeed}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="722" y="0" width="80" height="40" isPrintWhenDetailOverflows="true" uuid="b870f362-2e09-4b9b-9650-49f2c57c0cb1"/>
+					<box>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isUnderline="true" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{confNo}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<project name="IOMS" basedir="." default="usage" xmlns:jacoco="antlib:org.jacoco.ant" xmlns:sonar="antlib:org.sonar.ant">
+	<property file="build.properties" />
+
+	<property name="src.dir" value="src" />
+	<property name="resource.dir" value="resource" />
+	<property name="test.dir" value="test" />
+	<property name="dist.dir" value="dist" />
+	<property name="web.dir" value="war" />
+	<property name="jsp.dir" value="${web.dir}/WEB-INF/jsp" />
+	<property name="build.dir" value="${web.dir}/WEB-INF/classes" />
+	<property name="lib.dir" value="${web.dir}/WEB-INF/lib" />
+	<property name="testcase.dir" value="testcases" />
+	<property name="report.dir" value="report" />
+	<property name="report.jacoco.dir" value="${report.dir}/jacoco" />
+	<property name="report.jacoco.file" value="${report.dir}/jacoco.exec" />
+	<property name="report.jacocoit.file" value="${report.dir}/jacoco-it.exec" />
+	<property name="projectKey" value="IOMS" />
+	<property name="projectName" value="空管网络网控运维信息平台" />
+
+	<!-- Define the SonarQube global properties (the most usual way is to pass these properties via the command line) -->
+	<property name="sonar.host.url" value="http://localhost:9000" />
+	<!-- Define the SonarQube project properties -->
+	<property name="sonar.projectKey" value="${projectKey}" />
+	<property name="sonar.projectName" value="${projectName}" />
+	<property name="sonar.projectVersion" value="1.0" />
+	<property name="sonar.sources" value="${src.dir}" />
+	<property name="sonar.tests" value="${test.dir}" />
+	<property name="sonar.inclusions" value="${src.dir}/**/turndutymng/**, ${src.dir}/**/faultmng/**, ${src.dir}/**/phonemng/**, ${src.dir}/**/statellite/**, ${src.dir}/**/satellitedayauto/**, ${src.dir}/**/satelliteauto/**, ${src.dir}/**/statelliteauto/**" />
+	<property name="sonar.test.inclusions" value="${test.dir}/**/turndutymng/**, ${test.dir}/**/faultmng/**, ${test.dir}/**/phonemng/**, ${test.dir}/**/statellite/**, ${test.dir}/**/satellitedayauto/**, ${test.dir}/**/satelliteauto/**, ${test.dir}/**/statelliteauto/**" />
+	<property name="sonar.sourceEncoding" value="UTF-8" />
+	<property name="sonar.java.binaries" value="${build.dir}" />
+	<property name="sonar.java.libraries" value="${lib.dir}/*.jar" />
+	<property name="sonar.junit.reportsPath" value="${report.dir}" />
+	<property name="sonar.jacoco.reportPath" value="${report.jacoco.file}" />
+	<property name="sonar.jacoco.itReportPath" value="${report.jacocoit.file}" />
+	
+	<path id="test.lib.classpath">
+		<fileset dir="lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	<path id="master-classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+			<exclude name="${projectKey}.jar" />
+		</fileset>
+		<fileset dir="${appserver.home}/lib">
+			<include name="servlet*.jar" />
+		</fileset>
+		<pathelement path="${build.dir}" />
+	</path>
+
+	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+		<classpath path="lib/jacocoant.jar" />
+	</taskdef>
+
+	<target name="usage">
+		<echo message="" />
+		<echo message="${projectKey} build file ${deploy.path}" />
+		<echo message="-----------------------------------" />
+		<echo message="" />
+		<echo message="Available targets are:" />
+		<echo message="" />
+		<echo message="build     --> Build the application" />
+		<echo message="deploy    --> Deploy application as directory" />
+		<echo message="deploywar --> Deploy application as a WAR file" />
+		<echo message="install   --> Install application in Tomcat" />
+		<echo message="reload    --> Reload application in Tomcat" />
+		<echo message="start     --> Start Tomcat application" />
+		<echo message="stop      --> Stop Tomcat application" />
+		<echo message="list      --> List Tomcat applications" />
+		<echo message="" />
+	</target>
+
+	<target name="clean" description="Clean output directories" depends="init">
+		<delete includeEmptyDirs="true">
+			<fileset dir="${build.dir}">
+			</fileset>
+		</delete>
+		<delete includeEmptyDirs="true">
+			<fileset dir="${report.dir}">
+			</fileset>
+		</delete>
+		<delete includeEmptyDirs="true">
+			<fileset dir="${lib.dir}">
+				<include name="${projectKey}.jar" />
+			</fileset>
+		</delete>
+		<delete includeEmptyDirs="true">
+			<fileset dir="${testcase.dir}">
+			</fileset>
+		</delete>
+
+		<echo level="info">Clean the project success</echo>
+	</target>
+
+	<target name="init" description="初始化项目文件夹">
+		<mkdir dir="${report.dir}" />
+		<mkdir dir="${report.jacoco.dir}" />
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${testcase.dir}" />
+	</target>
+
+	<target name="compile" depends="init" description="编译源代码（不含测试代码）">
+		<javac destdir="${build.dir}" debug="true" debuglevel="lines,source" encoding="utf-8" includeantruntime="on">
+			<src path="${src.dir}" />
+			<classpath refid="master-classpath" />
+		</javac>
+		<echo>compilation complete!</echo>
+	</target>
+
+	<target name="test compile" depends="compile" description="编译测试源代码">
+		<javac srcdir="${test.dir}" destdir="${testcase.dir}" encoding="utf-8" debug="true" debuglevel="lines,source">
+			<classpath refid="test.lib.classpath" />
+			<classpath refid="master-classpath" />
+			<include name="**/*.java" />
+		</javac>
+		<echo>test compilation complete!</echo>
+	</target>
+
+
+
+	<target name="build" description="Compile main source tree java files">
+		<mkdir dir="${build.dir}" />
+		<javac destdir="${build.dir}" debug="true" debuglevel="lines,source" encoding="utf-8" includeantruntime="on">
+			<src path="${src.dir}" />
+			<classpath refid="master-classpath" />
+		</javac>
+		<copy todir="${build.dir}" preservelastmodified="true">
+			<fileset dir="${src.dir}">
+				<include name="/images/**" />
+				<include name="**/*.xml" />
+				<include name="**/*.properties" />
+				<include name="**/*.dat" />
+				<exclude name="tests/**/*.xml" />
+			</fileset>
+		</copy>
+		<war destfile="${projectKey}.war" webxml="${web.dir}/WEB-INF/web.xml">
+			<lib dir="${lib.dir}">
+			</lib>
+			<classes dir="${build.dir}">
+			</classes>
+		</war>
+	</target>
+
+
+	<target name="jarSrc" description="jar the src" depends="clean,build">
+		<jar destfile="${lib.dir}/${projectKey}.jar">
+			<fileset dir="${build.dir}">
+				<include name="**/*" />
+				<include name="**/*.JPG" />
+				<include name="**/*.jpg" />
+				<include name="**/*.png" />
+				<exclude name="*.*" />
+			</fileset>
+		</jar>
+		<copy todir="${dist.dir}">
+			<fileset file="${lib.dir}/${projectKey}.jar">
+			</fileset>
+		</copy>
+		<echo level="info">jar the src success.</echo>
+	</target>
+
+	<target name="deploy" depends="build" description="deploy application">
+		<copy todir="${deploy.path}/${projectKey}" preservelastmodified="true">
+			<fileset dir="${web.dir}">
+				<include name="**" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="undeploy" description="Un-Deploy application">
+		<delete includeEmptyDirs="true">
+			<fileset dir="${deploy.path}/${projectKey}">
+				<include name="**/*" />
+			</fileset>
+		</delete>
+	</target>
+	<target name="clean-deploy" depends="clean,deploy" description="Clean and Deploy">
+	</target>
+
+	<target name="publishBin" depends="jarSrc" description="publish the application">
+		<delete includeemptydirs="true">
+			<fileset dir="${build.dir}">
+				<include name="**/*" />
+				<exclude name="*.*" />
+			</fileset>
+		</delete>
+		<war destfile="${dist.dir}/${projectKey}.war" webxml="${web.dir}/WEB-INF/web.xml">
+			<fileset dir="${web.dir}">
+				<include name="**/*.*" />
+				<exclude name="WEB-INF/web.xml" />
+			</fileset>
+		</war>
+		<echo level="info">pulish the ${dist.dir}/${projectKey}.war (bin) success</echo>
+	</target>
+
+	<target name="publishSrc" description="publish the src">
+		<antcall target="clean">
+		</antcall>
+		<zip destfile="${dist.dir}/${projectKey}-src.zip">
+			<fileset dir="${src.dir}" includes="**/**" />
+		</zip>
+		<zip destfile="${dist.dir}/${projectKey}-total.zip">
+			<fileset dir="." includes="${src.dir}/**" />
+			<fileset dir="." includes="${test.dir}/**" />
+			<fileset dir="." includes="${web.dir}/**" />
+			<fileset dir="." includes="*.*" />
+		</zip>
+		<echo level="info">Publish the ${dist.dir}/${projectKey}-src.zip (src) success^_^</echo>
+	</target>
+
+	<target name="dist" depends="publishBin,publishSrc" description="Distribute the project!">
+		<echo level="info">Distribute the ${projectKey} success</echo>
+	</target>
+
+	<target name="all compile" depends="init, build">
+	</target>
+
+	<target name="junit" depends="test compile" description="执行Junit单元测试">
+		<jacoco:coverage destfile="${report.jacoco.file}">
+			<junit printsummary="on" fork="true" showoutput="true">
+				<classpath>
+					<fileset dir="${lib.dir}">
+						<include name="**/*.jar" />
+						<exclude name="${projectKey}.jar" />
+					</fileset>
+					<pathelement path="${test.lib.classpath}" />
+					<pathelement path="${testcase.dir}" />
+				</classpath>
+				<classpath refid="test.lib.classpath" />
+				<classpath refid="master-classpath" />
+				<formatter type="xml" />
+				<batchtest todir="${report.dir}">
+					<fileset dir="${testcase.dir}">
+						 <!--仅测试turndutymng、faultmng、phonemng、statellite、satellitedayauto、satelliteauto、statelliteauto目录-->
+						<include name="**/turndutymng/**/*Test*.class" />
+						<include name="**/faultmng/**/*Test*.class" />
+						<include name="**/phonemng/**/*Test*.class" />
+						<include name="**/statellite/**/*Test*.class" />
+						<include name="**/satellitedayauto/**/*Test*.class" />
+						<include name="**/satelliteauto/**/*Test*.class" />
+						<include name="**/statelliteauto/**/*Test*.class" />
+					</fileset>  
+				</batchtest> 
+			</junit>
+		</jacoco:coverage>
+	</target>
+
+	<target name="junit report" depends="junit" description="生成Junit单元测试报告">
+		<junitreport todir="${report.dir}">
+			<fileset dir="${report.dir}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${report.dir}" />
+		</junitreport>
+	</target> 
+
+	<target name="jacoco report" depends="junit" description="生成JaCoCo测试覆盖率报告">
+		<jacoco:report>
+
+			<executiondata>
+				<file file="${report.jacoco.file}" />
+			</executiondata>
+
+			<!-- the class files and optional source files ... -->
+			<structure name="${projectKey}">
+				<classfiles>
+					<fileset dir="${testcase.dir}" />
+					<fileset dir="${build.dir}" />
+				</classfiles>
+				<sourcefiles encoding="UTF-8">
+					<fileset dir="${src.dir}" />
+				</sourcefiles>
+			</structure>
+
+			<!-- to produce reports in different formats. -->
+			<html destdir="${report.jacoco.dir}" />
+			<csv destfile="${report.jacoco.dir}/report.csv" />
+			<xml destfile="${report.jacoco.dir}/report.xml" />
+		</jacoco:report>
+	</target>
+	
+	<target name="sonar" depends="compile" description="使用SonarQube进行代码审查">
+	    <taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
+	    	<classpath refid="test.lib.classpath" />
+	    </taskdef>
+	    <sonar:sonar />
+	</target>
+	
+	<target name="QA" depends="jacoco report, sonar" description="执行代码鉴定（JaCoCo+SonarQube）" >
+		<echo>QA complete!</echo>
+	</target>
+
+</project>

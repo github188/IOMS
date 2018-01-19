@@ -1,0 +1,405 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<link href="../skin/css/widget.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../hojo/hojo.js" djConfig="isDebug:false, parseOnLoad:false"></script>
+<script type="text/javascript" src="../js/icallcenter/global.js"></script>
+<script type="text/javascript">
+hojo.registerModulePath("icallcenter","../js/icallcenter");
+hojo.require("icallcenter.logon");
+hojo.require("icallcenter.hojotools");
+
+hojo.addOnLoad(function() {
+    var proxyUrl = "http://120.27.133.149";
+    var account = "N00000005689";
+    var pbx = "bj.ali.3.7";
+    icallcenter.logon.startLogon(proxyUrl, account, pbx);
+});
+
+
+</script>
+
+<style type="text/css">
+
+
+    .button {
+        height: 22px;
+        background-image: url(images/list_bg.gif);
+        color: #2F8DBB;
+        font-size: 13px;
+        line-height: 22px;
+        font-weight: bold;
+    }
+
+    .menu2 {
+        height: 23px;
+        width: 59px;
+        border: solid 0px;
+        background-color: #E4F4FD;
+        padding-left: 20px;
+        font-weight: bold;
+        color: #2F8DBB;
+        padding-top: 5px;
+    }
+
+    .menu4 {
+        height: 23px;
+        width: 123px;
+        border: solid 0px;
+        background-color: #E4F4FD;
+        padding-left: 15px;
+        font-weight: bold;
+        color: #2F8DBB;
+        padding-top: 5px;
+    }
+    
+     .Dial {
+        background-image: url(images/botn_07.gif);
+    }
+    
+    .Answer {
+        background-image: url(images/botn_10.gif);
+    }
+
+    .Hangup {
+        background-image: url(images/botn_13.gif);
+    }
+
+    .Hold {
+        background-image: url(images/botn_14.gif);
+    }
+
+    .Transfer {
+        background-image: url(images/botn_17.gif);
+    }
+
+    .conference {
+        background-image: url(images/botn_03.gif);
+    }
+	
+	.headTitle{
+		color:#0e5c99;
+		font-weight:bold;
+		font-size:15px;
+	}
+    
+    
+</style>  
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css" />
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+</head>
+<body>
+  <div class="panel panel-default">
+     <div class="panel-heading">
+                    监控
+     </div>
+     <div class="panel-body">
+     
+    
+	<div style="display:none">
+		
+				<table width="150" cellpadding="0" cellspacing="0"  id="softphonebar" align="center" style="margin-top: 10px;">
+		<tr>
+			<td align="left">
+				状态：<span id="icallcenter.state">空闲</span>
+			</td>
+		</tr>
+		<tr>	
+			<td >
+				<div style="position: relative;">
+				
+						<table cellspacing=0 cellpadding=0 id="softPhonePopId" style="position:absolute;-moz-opacity:0.9;opacity:0.9;z-index:9999;display: none;border:1px solid #aeaeae;background-color: #fff;" onclick="softphoneBar.showMenu(hojo.byId('softphonebar.select'));">
+							<tr>
+								<td style="background-repeat:repeat-y;">
+								<div id="softphonebar.selectMenu">
+									
+								</div>
+								</td>
+							</tr>
+						</table>
+					<div style="float: left;width:104px;height:17px;text-align: left;background-color: #fff;padding-left: 4px;" id="softphonebar.peerState">
+					</div>
+					<div id="softphonebar.select" style="float: left;width:19px;height:22px;position: absolute;left: 106px;" onclick="softphoneBar.showMenu(this);"><img  src="../skin/image/softphone/select_1.jpg" onmouseover="this.src='../skin/image/softphone/select_2.gif'" onmouseout="this.src='../skin/image/softphone/select_1.jpg'" style="cursor: pointer;"/></div>
+					<div style="float: left;padding-top: 3px;font-size: 18px;padding-left: 18px;display: none" id="softphonebar.callTimeState">
+					</div>
+						<div  style="float: left;padding-top: 3px;font-size: 20px;padding-left: 24px;display: none" id="softphonebar.peerTimeState">
+						</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td height=4></td>
+		</tr>
+		<tr>
+			<td align="left">
+				<input type="text" id="icallcenter.dialout.input" style="height:23px;font-size: 18px;font-weight: bold;border: 0px;width:125px;background-color: #fff;display: bolck" onkeydown="if(event.keyCode == 13){softphoneBar.dialout(hojo.byId('icallcenter.dialout.input').value)}" />
+			</td>		
+		</tr>
+		<tr>
+			<td height="28">
+	            <input id=DialEnable type=button name=Dial value="拨号" style="float: left" onclick="softphoneBar.dialout(hojo.byId('icallcenter.dialout.input').value)" class="menu2 Dial"/>&nbsp;
+	            <input id=DialDisable type=button name=Dial value="拨号" disabled style="display:none;float: left" class="menu2 Dial"/>&nbsp;
+	            <div style="float: left;width: 10px" >&nbsp;</div>
+	            <input id=BellEnable type=button name=Answer value="应答" style="float: left;display:none;" onclick="phone.answer();" class="menu2 Answer" />
+	            <input id=BellDisable type=button name=Answer value="应答" disabled style="float: left" class="menu2 Answer"/>
+	        </td>
+	    </tr>
+	    <tr>
+	    	<td height="28">
+	            <input id=HangupEnable type=button value="挂机" style="float: left;display: none" name=Hangup class="menu2 Hangup" onclick="javascript:phone.hangup();" />
+	            <input id=HangupDisable type=button value="挂机" style="float: left" disabled  name=Hangup class="menu2 Hangup" />
+				<div style="float: left;width: 10px" >&nbsp;</div>
+				<input id=HoldEnable type=button value="保持" style="float: left;display: none" name=hold class="menu2 Hold" onclick="phone.hold();"/>
+				<input id=HoldDisable type=button value="保持" style="float: left" name=hold disabled  class="menu2 Hold" />
+	    	 	<input id=HoldGetEnable type=button value="恢复" style="float: left;display: none" name=hold class="menu2 Hold" onclick="phone.unhold();" />
+	    		<div style="clear: both;">&nbsp;</div>
+	    	</td>      
+		</tr>
+		
+		<tr>
+	    	<td height="28">
+				<input id=TransferEnable type=button value="询问转接" style="float: left;display: none" name=Transfer onclick="softphoneBar.toTransfer()" class="menu4 Transfer"/>
+				<input id=TransferDisable type=button value="询问转接" style="float: left" name=Transfer disabled  class="menu4 Transfer"/>
+
+			</td>
+		</tr>
+							
+		<tr>
+	    	<td height="28">
+	    		<input id=ThreeWayCallEnable type="button" value="召集会议" style="float: left;display: none" name="conference" onclick="javascript:softphoneBar.toThreeWayCall();" class="menu4 conference"/>
+				<input id=ThreeWayCallDisable type="button" value="召集会议" style="float: left" name="conference" disabled class="menu4 conference"/>
+	            
+            </td>
+		</tr>
+		
+	</table>
+	
+	
+	
+	</div>	
+
+	
+	
+		<div style="height:10px;overflow: hidden">&nbsp;</div>
+		<div id="icallcenter.minitor">
+			<div class="task_title"></div>
+			<div class="task_content">
+    	<div class='form_area'> 
+
+        
+		<div style="width:100%;padding-bottom:1px;" >
+      	<div class="grid" style="">
+			<DIV class="gridhead" >				 
+            <TABLE width="100%" height="100%" border=0 cellSpacing=0 cellPadding=0 class="table">
+                <COLGROUP>					
+					<COL width="100%">
+                </COLGROUP>
+				  <THEAD class="monitor_thead">
+					<tr >
+					  <th colspan='4' align="left"><div class="monitor_thead_title">服务号监控列表</div></th>
+					</tr>
+				  </THEAD>
+                <TBODY>
+                
+                	<tr>
+                		<td style="padding-left: 1px;">
+                			<table border=0 cellSpacing=0 cellPadding=0 width=100% class="table">
+				                <COLGROUP>					
+									<COL width="10%" span="4">
+				                </COLGROUP>
+			                    <TR id="icc.monitor.serviceNos.thead">  
+			                            <td align="center" style="cursor:pointer;" id="icc.monitor.serviceNosTd" onclick="tablesort.sortTable(this, 'icc.monitor.serviceNos', 0, 'string');" >
+			                            	<span>服务号码</span><span style="width:15px;">&nbsp;</span><span name="currentState"></span>
+			                            </td>
+			                            <td align="center" style="cursor:pointer;" onclick="tablesort.sortTable(this, 'icc.monitor.serviceNos', 1, 'int');" >
+			                            	<span>今日外部来电数</span><span style="width:15px;">&nbsp;</span><span name="currentState"></span>
+			                            </td>
+			                            <td align="center" style="cursor:pointer;" onclick="tablesort.sortTable(this, 'icc.monitor.serviceNos', 2, 'int');">
+			                            	<span>今日未接外部来电</span><span style="width:15px;">&nbsp;</span><span name="currentState"></span>
+			                            </td>
+			                            <td align="center" style="cursor:pointer;" onclick="tablesort.sortTable(this, 'icc.monitor.serviceNos', 3, 'int');">
+			                            	<span>今日已接外部来电</span><span style="width:15px;">&nbsp;</span><span name="currentState"></span>
+			                            </td>
+			                    </TR>
+			                  </table>
+			              </td>
+			            </tr>
+                </TBODY>
+             </TABLE>
+              <TABLE id="icc.monitor.serviceNos" width="100%" cellSpacing=0 cellPadding=0>
+                             <COLGROUP >
+									<COL width="100%" />
+                             </COLGROUP>
+                             <TBODY>
+                             </TBODY>
+                        </TABLE>
+            </DIV>
+           
+
+		</div>
+       
+        <DIV class="grid" style="width:60%;float:left">
+            <DIV class="gridhead">				 
+            <TABLE width="100%" height="100%" cellSpacing=0 cellPadding=0 >
+              
+                           <COLGROUP>					
+								<COL width="100%">
+			                </COLGROUP>
+                     
+				  <THEAD class="monitor_thead">
+					<tr >
+					  <th colspan='5' align="left"><div class="monitor_thead_title">技能组监控列表</div></th>
+					</tr>
+				  </THEAD>
+                <TBODY>
+                     <tr>
+                		<td style="padding-left: 1px;">
+                			<table border=0 cellSpacing=0 cellPadding=0 width=100% >
+				                <COLGROUP>					
+									<COL width="10%" span="6">
+				                </COLGROUP>
+                
+			                    <TR id="icc.monitor.queues.thead">  
+			                            <td align="center" style="cursor:pointer;" id="icc.monitor.queuesTd" onclick="tablesort.sortTable(this, 'icc.monitor.queues', 0, 'string');">
+			                            	<span>技能组名称</span><span style="width:15px;">&nbsp;</span><span name="currentState"></span>
+			                            </td>
+			                            <td align="center" style="cursor:pointer;" onclick="tablesort.sortTable(this, 'icc.monitor.queues', 1, 'int');">
+			                            	<span>空闲座席数</span><span style="width:15px;">&nbsp;</span><span name="currentState"></span>
+			                            </td>
+			                            <td align="center" style="cursor:pointer;" onclick="tablesort.sortTable(this, 'icc.monitor.queues', 2, 'int');">
+			                            	<span>签入座席数</span><span style="width:15px;">&nbsp;</span><span name="currentState"></span>
+			                            </td>
+			                            <td align="center" style="cursor:pointer;" onclick="tablesort.sortTable(this, 'icc.monitor.queues', 3, 'int');">
+			                            	<span>排队数</span><span style="width:15px;">&nbsp;</span><span name="currentState"></span>
+			                            </td>
+			                            <td align="center" style="cursor:pointer;" onclick="tablesort.sortTable(this, 'icc.monitor.queues', 4, 'int');">
+			                            	<span>今日接通电话数</span><span style="width:15px;">&nbsp;</span><span name="currentState"></span>
+			                            </td>
+                                        <td align="center" style="cursor:pointer;" onclick="tablesort.sortTable(this, 'icc.monitor.queues', 5, 'int');">
+                                            <span>今日进入电话数</span><span style="width:15px;">&nbsp;</span><span name="currentState"></span>
+                                        </td>
+			                    </TR>
+			                </table>
+			             </td>
+			          </tr>
+                </TBODY>
+             </TABLE>
+            </DIV>
+            <DIV class="griddata" >       
+             	<DIV >
+                    <TABLE id="icc.monitor.queues" width="100%" cellSpacing=0 cellPadding=0>
+                             <COLGROUP >
+									<COL width="100%">
+                             </COLGROUP>
+                             <TBODY>
+                                 
+                             </TBODY>
+                        </TABLE>
+                         <TABLE width="100%" height="100%" cellSpacing=0 cellPadding=0 class="table">
+			                 <COLGROUP>					
+			       					<col width="100%" />
+			                </COLGROUP>
+							  <THEAD class="monitor_thead">
+								<tr>
+								  <th colspan='10' align="left"><div class="monitor_thead_title" >座席监控列表&nbsp;&nbsp;(坐席总量:<span id="icc.monitor.agents.totalPeer" style="color:#dc4f4f"></span>&nbsp;&nbsp;在线坐席:<span id="icc.monitor.agents.onlinePeer" style="color:#dc4f4f"></span>&nbsp;&nbsp;空闲坐席:<span id="icc.monitor.agents.idlePeer" style="color:#dc4f4f"></span>)</div></th>
+								</tr>
+							  </THEAD>
+			            </TABLE>
+                 </DIV>                  
+            </DIV>
+        </DIV> 
+        <br/>
+        <DIV class="grid" style="width:90%;float:left;">
+            <DIV class="gridhead">	
+           
+            <TABLE width="100%" height="100%" cellSpacing=0 cellPadding=0 class="table">
+                
+              	  <TBODY>
+                     <tr>
+                		<th style="padding-left: 1px;">
+                			<table border=0 cellSpacing=0 cellPadding=0 width=100% >
+				                <COLGROUP>					
+									<col width="9%" />
+									<col width="7%" />
+									<col width="9%" />
+									<col width="9%" />
+									<col width="11%" />
+									<col width="9%" />
+									<col width="9%" />
+									<col width="9%" />
+									<col width="9%" />
+									<col width="19%" />
+				                </COLGROUP>
+			                    <TR id="icc.monitor.agents.thead">  
+			                            <td align="center" style="cursor:pointer;" id="icc.monitor.agentsTd">
+			                            	<span class="headTitle">座席姓名</span><span style="width:15px;">&nbsp;</span><span name="currentState"></span>
+			                            </td>
+			                            <td align="center" style="cursor:pointer;" >
+			                            	<span class="headTitle">工号</span><span style="width:15px;">&nbsp;</span><span name="currentState"></span>
+			                            </td>
+										<td align="center" style="cursor:pointer;" >
+										<span class="headTitle">已接听数</span><span style="width:15px;">&nbsp;</span><span name="currentState"></span>
+										</td>
+										<td align="center" style="cursor:pointer;" >
+											<span class="headTitle">外呼成功数</span><span style="width:15px;">&nbsp;</span><span name="currentState"></span>
+										</td>
+										 <td align="center" class="headTitle" >
+			                            	接听方式
+			                            </td>
+			                            <td align="center" class="headTitle">
+			                            	客户号码
+			                            </td>
+			                           
+			                            <td align="center" style="cursor:pointer;">
+			                           		<span class="headTitle">状态</span><span style="width:15px;">&nbsp;</span><span name="currentState"></span>
+			                           	</td>
+			                            <td align="center" class="headTitle">
+			                            	状态时长
+			                            </td>
+										<td align="center" style="cursor:pointer;" >
+											<span class="headTitle">网络延迟</span><span style="width:15px;">&nbsp;</span><span name="currentState"></span>
+										</td>
+			                            <td align="center" class="headTitle" style="display: none">
+			                            	操作
+			                            </td>
+			                    </TR>
+			                </table>
+			                
+			             </th>
+			          </tr>
+                </TBODY>
+             </TABLE>
+           
+                    <TABLE id="icc.monitor.agents" width="100%" cellSpacing=0 cellPadding=0 class="table">
+                             <COLGROUP >
+								<col width="100%" />
+                             </COLGROUP>
+                             <TBODY>
+
+                             </TBODY>
+                        </TABLE>
+                 
+            </DIV>
+            <DIV class="griddata" >       
+             	                 
+            </DIV>
+        </DIV>
+		
+		</div>  
+		
+		<div style="height:10px;overflow: hidden;clear: both">&nbsp;</div>
+		</div> 
+		</div>
+
+</div>
+</div>
+</div>
+
+
+
+</body>
+</html>
