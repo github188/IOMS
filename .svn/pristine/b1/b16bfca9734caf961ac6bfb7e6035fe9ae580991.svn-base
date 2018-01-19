@@ -1,2 +1,0 @@
-appserver.home=d:/tomcat7
-deploy.path=${appserver.home}/webapps/
